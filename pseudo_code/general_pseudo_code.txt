@@ -1,0 +1,1 @@
+Write general C++ pseudo code here for the general process of the entire system:
