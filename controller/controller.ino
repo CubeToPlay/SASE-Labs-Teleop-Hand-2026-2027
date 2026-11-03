@@ -1,6 +1,8 @@
 #include "../utils/structures.hpp"
 
-uint8_t broadcast_address[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+// ESP 1: 48:9d:31:2f:73:b0
+// ESP 2: 48:9d:31:2f:93:5c
+uint8_t broadcast_address[] = {0x48, 0x9D, 0x31, 0x2F, 0x93, 0x5C};
 
 StructMessage my_data;
 

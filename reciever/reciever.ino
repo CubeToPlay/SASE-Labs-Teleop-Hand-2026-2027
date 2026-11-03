@@ -12,7 +12,7 @@ void onDataRecv(const esp_now_recv_info_t *info, const uint8_t *data, int data_l
 }
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(74880);
   
   initalizeRecv(onDataRecv);
 }

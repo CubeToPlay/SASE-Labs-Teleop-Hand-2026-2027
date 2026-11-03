@@ -9,7 +9,10 @@ ESP-NOW
 # Notes
 **Tools > Board > esp32 > DOIT ESP32 DEVKIT V1**
 
-
 # Dependencies in Arduino IDE
 `Arduino ESP32 Boards` by Arduino
 `esp32` by Espressif Systems
+
+# ESP32 Info
+**ESP 1:** 48:9d:31:2f:73:b0
+**ESP 2:** 48:9d:31:2f:93:5c
