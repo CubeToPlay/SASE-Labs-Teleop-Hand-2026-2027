@@ -1,3 +1,5 @@
+/* Reciever - Directly controls the ROBOTIC hand gets its inputs from the Sender microcontroller which is on the human worn glove */
+
 #include "../utils/structures.hpp"
 
 StructMessage my_data;

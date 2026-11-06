@@ -1,1 +1,30 @@
 Write general C++ pseudo code here for the general process of the entire system:
+Notes: 
+- Sender (controller.ino gets inputs from a human through a worn glove)
+- Reciever (reciever.ino) gets inputs from the output of Sender and sends its output to the robotic hand to control it
+
+
+
+
+
+SENDER (controller.ino):
+1. Package input data from human worn glove into a struct (like a bus for a bunch of data).
+2. Send that data bus to the reciever by utilizing the broadcast address.
+
+Specify here exactly what kind of data will be put in the struct:
+- 
+
+3.
+
+
+
+
+
+RECIEVER (reciever.ino):
+1. Recieve the bussed data from the sender and unpackage it.
+2. Unpackage/split the data bus into whatever smaller data units are needed.
+
+Specify here exactly what kind of data units should be defined out of the bus:
+- 
+
+3. 

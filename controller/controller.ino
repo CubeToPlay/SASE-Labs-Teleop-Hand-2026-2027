@@ -1,3 +1,5 @@
+/* Sender - Recieves inputs from the human worn glove and sends that data to the Reciever microcontroller on the robotic hand */
+
 #include "../utils/structures.hpp"
 
 // ESP 1: 48:9d:31:2f:73:b0
