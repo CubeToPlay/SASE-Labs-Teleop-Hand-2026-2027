@@ -9,22 +9,33 @@ Notes:
 
 SENDER (controller.ino):
 1. Package input data from human worn glove into a struct (like a bus for a bunch of data).
-2. Send that data bus to the reciever by utilizing the broadcast address.
+2. Specify here exactly what kind of data will be put in the struct:
+- The human worn glove will have flex sensors pertaining to the joints. The resistance data gathered by those sensors shall be sent to the SENDER microcontroller. 
+- The Sender microcontroller will have an input pin wired to each joint (flex sensor) on the human worn glove.
+- Use the data sent to those pins to help build the data struct (bus/package) of the resistances of each joint in whatever appropriate data format works for an individual resistance
+(e.g. let's say PIN 1 is wired to the middle joint on the pointer finger and gets one value, a resistance corresponding to how bent/rotated that specific joint is, that value should be 
+appropriatley changed/converted then stored in a variable then that variable can be placed in a struct).
 
-Specify here exactly what kind of data will be put in the struct:
-- 
+Basically, a converted resistance value (from a voltage value) per joint is the type of data that will be worked with.
 
-3.
+
+3. Put individual converted resistance values into variables, place those variables in a struct (the data bus/package).
+4. Send that data bus/package to the reciever by utilizing the broadcast address of the Sender microcontroller.
 
 
 
 
 
 RECIEVER (reciever.ino):
-1. Recieve the bussed data from the sender and unpackage it.
-2. Unpackage/split the data bus into whatever smaller data units are needed.
+1. Recieve the bussed data from the sender and unpackage it by utilizing the broadcast address of the Sender microcontroller.
+2. Pull the data out of the struct and define variables to hold the individual converted resistance values.
+3. This may require a lot of trial and error: From the recieved values, develop an algorithm to calculate the next movement/orientation of the robotic hand.
+- Each recieved converted resitance value can be used to represent how bent a joint is, this information can be used to figure out how bent that specific joint on the robotic hand should be
+(repeating this process for each joint will result in the full new orientation of the robotic hand).
 
-Specify here exactly what kind of data units should be defined out of the bus:
-- 
+4. Write the algorithm for converting A SINGLE unpackaged value to data for the Receiver microcontroller to send to the robotic hand's corresponding servo to finally move that single joint on the robotic hand
+(This will likley be where the bulk of the testing and reading data sheets for the project lies, software wise at least): 
 
-3. 
+Servos rotate based on PWM (Pulse Width Modulation) data.
+- Convert the voltage/resistance data recieved from the Sender microcontroller's data struct into PWM data. "How exactly do we that?" Good question, write the steps out for that below:
+Step 1:
