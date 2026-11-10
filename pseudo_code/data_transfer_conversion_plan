@@ -1,0 +1,7 @@
+Our data structure:
+Resistances/Bend Angles (Human Glove) --> Voltages (Into Sender microcontroller) --> Convert Analog values to Digitial values (ADC) --> Send these values through a struct to the Reciever microcontroller
+
+-->
+
+In Reciever microcontroller, convert struct values through look up table (Voltage to Angle of servo on Robotic Hand) --> Send this converted data through the Reciever microcontroller to the 5 servos per finger on the robotic hand with analogWrite(PIN p, int val) where val is an integer that corresponds to theta, the degrees that the servo shall rotate.
+
